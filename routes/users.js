@@ -91,7 +91,7 @@ router.post('/savePhoto', async (req, res) => {
 	let {
 		userid
 	} = req.body;
-	let saveSrc = `http://${global.localIp}:3000/static/photoImg/${photoImg.name}`;
+	let saveSrc = `http://47.101.129.247:3000/static/photoImg/${photoImg.name}`;
 	let sql = `select * from user where id = ${userid}`;
 	let user = await db.query(sql);
 	
@@ -100,7 +100,7 @@ router.post('/savePhoto', async (req, res) => {
 			return res.status(500).send(err);
 		}
 		if(user.length) {
-			let sql = `update user set photosrc="http://${global.localIp}:3000/static/photoImg/${photoImg.name}" where id=${userid}`;
+			let sql = `update user set photosrc="http://47.101.129.247:3000/static/photoImg/${photoImg.name}" where id=${userid}`;
 			console.log(sql);
 			db.query(sql).then(result => {
 				res.json({
