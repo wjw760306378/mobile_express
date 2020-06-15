@@ -1,5 +1,5 @@
 const mysqlconfig = {
-	host: '47.101.129.247',
+	host: 'localhost',
 	user: 'root',
 	password: '123456wjw',
 	database: 'mobile_express'
